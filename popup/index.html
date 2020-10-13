@@ -1,0 +1,102 @@
+<!DOCTYPE html ng-csp>
+<html>
+<head>
+    <title></title>
+    <script src="../bower_components/platform/platform.js"></script>
+    <link rel="import" href="../bower_components/core-icons/core-icons.html">
+    <link rel="import" href="../bower_components/core-icons/editor-icons.html">
+    <link rel="import" href="../bower_components/core-icons/av-icons.html">
+    <link rel="import" href="../bower_components/core-icons/notification-icons.html">
+    <link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="../bower_components/core-tooltip/core-tooltip.html">
+    <link rel="import" href="../bower_components/paper-input/paper-input.html">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en">
+    <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body unresolved ng-app="downloadVideos" ng-csp="" ng-controller="MainController">
+<core-header-panel>
+    <core-toolbar ng-if="motd" style="background: #ffeb3b; color: #333; fill: #333;">
+        <div class="flex" ng-bind-html="getMotdMessage()"></div>
+        <div>
+        <paper-fab mini="" icon="done-all" ng-click="deleteMotd()"></paper-fab>
+        </div>
+    </core-toolbar>
+
+    <core-toolbar>
+        <paper-tabs id="tabs" selected="0" self-end="">
+            <paper-tab name="currentTab" ng-click="filterThisTab()">{{getMessage('currentTab')}}</paper-tab>
+            <paper-tab name="allTabs" ng-click="filterAllTabs()">{{getMessage('allTabs')}}</paper-tab>
+            <paper-tab name="settings" ng-click="showSettings();">
+                <paper-fab mini="" icon="settings"></paper-fab>
+            </paper-tab>
+        </paper-tabs>
+    </core-toolbar>
+
+    <div class="container layout vertical center">
+        <div class="videoCards" ng-show="settings">
+            <core-header>
+                <core-toolbar style="background: #fff;color:#333;margin-bottom:10px">
+                    <span class="flex">
+                        <a href="" ng-click="openLink('https://chrome.google.com/webstore/detail/cocpoafjpjoicnackaebgdapfoapikpo/reviews');">
+                            {{getMessage('Review App')}}
+                        </a>
+                    </span>
+                    <paper-fab mini="" icon="launch" ng-click="openLink('https://chrome.google.com/webstore/detail/cocpoafjpjoicnackaebgdapfoapikpo/reviews');" style="background-color:#0f9d58"></paper-fab>
+                </core-toolbar>
+                <core-toolbar style="background: #fff;color:#333;">
+                    <span class="flex">
+                        <a href="" ng-click="openLink('https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EM76LNG6SWAAC&currency_code=USD');">
+                            <span style="font-size:0.8em">{{getMessage('Make a donation')}}</span>
+                        </a>
+                    </span>
+                    <paper-fab mini="" icon="attach-money" ng-click="openLink('https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EM76LNG6SWAAC&currency_code=USD');" style="background-color:#0f9d58"></paper-fab>
+                </core-toolbar>
+                <core-toolbar class="discordapp" style="background: #fff; color:#333; ">
+                    <span class="flex">
+                        {{getMessage('help')}}
+                        <iframe src="https://discordapp.com/widget?id=693493263310782555&theme=dark" width="100%" height="320px" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    </span>
+                </core-toolbar>
+            </core-header>
+        </div>
+        <div class="videoCards" ng-hide="settings">
+            <div class="videoCard" ng-repeat="video in videos  track by $index" style="background-image: url('{{video.video.thumbs[640]}}');">
+                <div>
+                    <div class="card-header" layout="" horizontal="" center="">
+                        <p>{{video.video.title}}</p>
+                    </div>
+                    <!-- Download buttons -->
+                    <paper-icon-button ng-if="video.download.state.current=='complete'" icon="cloud-done" title="{{getMessage('Downloaded')}}" class="medium iconDownload" ng-click="downloadVideo(video)"></paper-icon-button>
+                    <paper-icon-button ng-if="video.download.state.current=='interrupted'" icon="cloud-off" title="{{getMessage('Dl_Error')}}" class="medium iconDownload" ng-click="downloadVideo(video)"></paper-icon-button>
+                    <!-- <paper-icon-button ng-if="video.download.state.current=='in_progress'" icon="cloud-queue" title="{{getMessage('Downloading')}}" class="medium iconDownload" ng-click="downloadVideo(video)"></paper-icon-button> -->
+                    <paper-icon-button ng-if="!video.download" icon="cloud-download" class="medium iconDownload" title="{{getMessage('Click to Download')}}" ng-click="downloadVideo(video)"></paper-icon-button>
+                    <!-- Others buttons -->
+                    <paper-icon-button class="medium iconOpen" ng-show="video.download.state.current=='complete'" title="{{getMessage('Click to Open')}}" ng-click="playVideo(video)" icon="av:video-youtube"></paper-icon-button>
+                    <paper-icon-button class="medium iconRemove" ng-click="removeVideo(video)" title="{{getMessage('Click to Remove')}}" icon="highlight-remove"></paper-icon-button>
+                </div>
+                <input ng-click="selectMe($event);" class="downloadLink" value="{{video.downloadURL}}"/>
+            </div>
+
+            <core-header-panel ng-hide="videos">
+                <core-toolbar style="margin-bottom:10px;background: #ffeb3b; color: #333; fill: #333;">
+                    <span flex>{{getMessage('Hey___You_need_some_videos___')}}
+                        <br>
+                        <span style="font-size:0.8em">{{getMessage('Go to')}} <a target="_blank" href="http://vimeo.com/channels/staffpicks/">vimeo.com</a> {{getMessage('or reload the page')}}</span>
+                    </span>
+                </core-toolbar>
+            </core-header-panel>
+        </div>
+    </div>
+</core-header-panel>
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

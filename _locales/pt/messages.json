@@ -1,0 +1,90 @@
+{
+   "CANT_REACH_SERVER": {
+      "description": "",
+      "message": "Não foi possível acessar o servidor, verifique sua conexão com a internet"
+   },
+   "Go_to": {
+      "description": "In the context of 'Go to vimeo.com' synonyms: Load, See ",
+      "message": "Vá para"
+   },
+   "Hey___You_need_some_videos___": {
+      "description": "",
+      "message": "Ei! Você precisa de alguns vídeos :)"
+   },
+   "Please_go_to_your_browser_settings_": {
+      "description": "",
+      "message": "Vá para as configurações do seu navegador e conecte-se"
+   },
+   "Reload_Data_from_server": {
+      "description": "",
+      "message": "Recarregar dados do servidor"
+   },
+   "allTabs": {
+      "description": "11 chars max for translation",
+      "message": "Todas abas"
+   },
+   "currentTab": {
+      "description": "11 char max for translation",
+      "message": "Aba atual"
+   },
+   "Click_to_Open": {
+      "description": "Clique para abrir",
+      "message": "Clique para abrir"
+   },
+   "Downloaded": {
+      "description": "Video baixado",
+      "message": "Video baixado"
+   },
+   "Dl_Error": {
+      "description": "Erro ao baixar o video",
+      "message": "Erro ao baixar o video"
+   },
+   "Downloading": {
+      "description": "Video está sendo baixado",
+      "message": "Video está sendo baixado"
+   },
+   "Click_to_Download": {
+      "description": "Clique para baixar",
+      "message": "Clique para baixar"
+   },
+   "Click_to_Remove": {
+      "description": "Clique para remover o video",
+      "message": "Clique para remover o video"
+   },
+   "enjoy": {
+      "description": "",
+      "message": "aproveite"
+   },
+   "extensionDescription": {
+      "description": "Extension description.",
+      "message": "Gerenciador de downloads simples e profissional de qualquer vídeo Vimeo hospedado em qualquer lugar na web."
+   },
+   "extensionName": {
+      "description": "Extension name.",
+      "message": "Vimeo Downloader"
+   },
+   "Review_App": {
+      "description": "",
+      "message": "Avalie a extensão"
+   },
+   "Make_a_donation": {
+      "description": "",
+      "message": "Se você gostou de baixar videos do vimeo de graça, apoie o desenvolvedor. Faça uma doação!"
+   },
+   "feedback": {
+      "description": "",
+      "message": "feedback"
+   },
+   "help": {
+      "description": "",
+      "message": "Se você tiver qualquer problema, converse conosco."
+   },
+   "homepage": {
+      "description": "",
+      "message": "página inicial"
+   },
+   "or_reload_the_page": {
+      "description": "",
+      "message": "ou atualize a página"
+   }
+}

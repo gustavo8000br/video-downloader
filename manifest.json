@@ -1,0 +1,44 @@
+{
+   "manifest_version": 2,
+   "name": "__MSG_extensionName__",
+   "minimum_chrome_version": "37",
+   "short_name": "VimeoDwnldr",
+   "version": "1.0.0.4",
+   "background": {
+      "scripts": [ "bower_components/async/lib/async.js", "bower_components/lodash/dist/lodash.js", "lib/analytics.js", "lib/tabs.js", "lib/vimeo.js", "lib/app.js", "background.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content_scripts/vimeo.js" ],
+      "matches": [ "*://*.vimeo.com/*" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "externally_connectable": {
+      "matches": [ "*://*.vimeo.com/*" ]
+   },
+   "icons": {
+      "128": "assets/icon_128.png",
+      "16": "assets/icon_16.png",
+      "48": "assets/icon_48.png"
+   },
+   "page_action": {
+      "default_icon": {
+         "19": "assets/icon_16.png",
+         "38": "assets/icon_128.png"
+      },
+      "default_popup": "popup/index.html",
+      "default_title": "Download"
+   },
+   "permissions": [ 
+   "http://*.vimeo.com/*",
+   "https://*.vimeo.com/*",
+   "downloads",
+   "webRequest",
+   "tabs",
+   "storage"
+   ],
+   "web_accessible_resources": [ 
+   "public/*"
+   ]
+}

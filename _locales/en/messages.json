@@ -1,0 +1,74 @@
+{
+   "Go_to": {
+      "description": "In the context of 'Go to vimeo.com' synonyms: Load, See ",
+      "message": "Go to"
+   },
+   "Hey___You_need_some_videos___": {
+      "description": "",
+      "message": "Hey! You need some videos ;)"
+   },
+   "Review_App": {
+      "description": "",
+      "message": "Review App"
+   },
+   "allTabs": {
+      "description": "11 chars max for translation",
+      "message": "All Tabs"
+   },
+   "currentTab": {
+      "description": "11 char max for translation",
+      "message": "Current Tab"
+   },
+   "Downloaded": {
+      "description": "Video downloaded",
+      "message": "Video downloaded"
+   },
+   "Dl_Error": {
+      "description": "Download error",
+      "message": "Download error"
+   },
+   "Downloading": {
+      "description": "Downloading",
+      "message": "Downloading"
+   },
+   "Click_to_Download": {
+      "description": "Click to download",
+      "message": "Click to download"
+   },
+   "Click_to_Remove": {
+      "description": "Click to remove this video",
+      "message": "Click to remove this video"
+   },
+   "enjoy": {
+      "description": "",
+      "message": "enjoy"
+   },
+   "Make_a_donation": {
+      "description": "",
+      "message": "If you enjoyed downloading videos from vimeo for free, support the developer. Make a donation!"
+   },
+   "extensionDescription": {
+      "description": "Extension description.",
+      "message": "Professional, simple downloader of any Vimeo video hosted anywhere on the web."
+   },
+   "extensionName": {
+      "description": "Extension name.",
+      "message": "Vimeo Downloader"
+   },
+   "feedback": {
+      "description": "",
+      "message": "feedback"
+   },
+   "help": {
+      "description": "",
+      "message": "If you have any trouble, chat us."
+   },
+   "homepage": {
+      "description": "",
+      "message": "homepage"
+   },
+   "or_reload_the_page": {
+      "description": "",
+      "message": "or reload the page"
+   }
+}
