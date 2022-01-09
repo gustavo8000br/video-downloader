@@ -61,6 +61,10 @@
    },
    "extensionName": {
       "description": "Extension name.",
+      "message": "Vimeo Video Downloader | Em Qualquer site em qualquer lugar"
+   },
+   "extensionSrtName": {
+      "description": "Extension Short name.",
       "message": "Vimeo Downloader"
    },
    "Review_App": {

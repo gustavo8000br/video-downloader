@@ -53,6 +53,10 @@
    },
    "extensionName": {
       "description": "Extension name.",
+      "message": "Vimeo Video Downloader | Download Videmo videos from any site and anywhere"
+   },
+   "extensionSrtName": {
+      "description": "Extension name.",
       "message": "Vimeo Downloader"
    },
    "feedback": {
