@@ -1,3 +1,3 @@
-// hi there !
-//TODO traduceri !!!
+console.log("start");
 app.init();
+console.log("end");
