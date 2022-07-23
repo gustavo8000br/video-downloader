@@ -1,0 +1,63 @@
+{
+   "manifest_version": 3,
+   "name": "__MSG_extensionName__",
+   "minimum_chrome_version": "99",
+   "short_name": "__MSG_extensionSrtName__",
+   "version": "1.0.0",
+   "default_locale": "pt",
+   "description": "__MSG_extensionDescription__",
+   "icons": {
+      "128": "assets/icon_128.png",
+      "48": "assets/icon_48.png",
+      "16": "assets/icon_16.png"
+   },
+   "permissions": [
+      "downloads",
+      "webRequest",
+      "tabs",
+      "storage"
+   ],
+   "host_permissions": [
+      "http://*.vimeo.com/*",
+      "https://*.vimeo.com/*"
+   ],
+   "sandbox": {
+      "pages": [
+        "popup/index.html"
+      ]
+   },
+   "background": {
+      "service_worker": "background-worker.js"
+   },
+   "content_scripts": [ 
+         {
+         "all_frames": true,
+         "js": [ "content_scripts/vimeo.js" ],
+         "matches": [ "*://*.vimeo.com/*" ]
+      } 
+   ]
+
+   /* Comments: 
+   
+
+   ========
+
+   Old code:
+
+   "background": {
+      "scripts": , "background.js"
+   },
+
+   // "page_action": {
+   //    "default_icon": {
+   //       "19": "assets/icon_16.png",
+   //       "38": "assets/icon_128.png"
+   //    },
+   //    "default_popup": "popup/index.html",
+   //    "default_title": "Download"
+   // },
+
+   ========
+
+   */
+}
