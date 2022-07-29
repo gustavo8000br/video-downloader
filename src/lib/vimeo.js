@@ -78,7 +78,7 @@ var vimeo = function () {
                     if (isFLV.test(quality)) {
                         extension = ".flv";
                     }
-                    ga('send', 'event', 'download', 'quality', quality);
+                    //ga('send', 'event', 'download', 'quality', quality);
                     return false;
                 }
             });

@@ -35,29 +35,8 @@
          "js": [ "content_scripts/vimeo.js" ],
          "matches": [ "*://*.vimeo.com/*" ]
       } 
-   ]
-
-   /* Comments: 
-   
-
-   ========
-
-   Old code:
-
-   "background": {
-      "scripts": , "background.js"
-   },
-
-   // "page_action": {
-   //    "default_icon": {
-   //       "19": "assets/icon_16.png",
-   //       "38": "assets/icon_128.png"
-   //    },
-   //    "default_popup": "popup/index.html",
-   //    "default_title": "Download"
-   // },
-
-   ========
-
-   */
+   ],
+   "web_accessible_resources": [
+      "public/js/vimeo.js"
+    ]
 }

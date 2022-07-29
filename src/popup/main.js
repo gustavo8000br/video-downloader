@@ -2,7 +2,7 @@ var bg = chrome.extension.getBackgroundPage();
 var vimeo = bg.vimeo;
 var app = bg.app;
 var currentTab = bg.currentTab;
-var ga = bg.ga;
+//var ga = bg.ga;
 
 var webApp = angular.module('downloadVideos', []);
 
@@ -39,7 +39,7 @@ webApp.controller('MainController', function ($scope, $interval, $sce) {
     };
 
     $scope.showSettings = function () {
-        ga('send', 'pageview', 'popup/settings');
+        //ga('send', 'pageview', 'popup/settings');
         tabs.selected = 'settings';
         $scope.settings = true;
     };
@@ -50,7 +50,7 @@ webApp.controller('MainController', function ($scope, $interval, $sce) {
     };
 
     $scope.filterThisTab = function () {
-        ga('send', 'pageview', 'popup/current-tab');
+        //ga('send', 'pageview', 'popup/current-tab');
         tabs.selected = 'currentTab';
         $scope.settings = false;
         $scope.videos = vimeo.filterByTab(currentTab.id);
@@ -64,13 +64,13 @@ webApp.controller('MainController', function ($scope, $interval, $sce) {
     };
 
     $scope.filterAllTabs = function () {
-        ga('send', 'pageview', 'popup/all-tabs');
+        //ga('send', 'pageview', 'popup/all-tabs');
         tabs.selected = 'allTabs';
         $scope.settings = false;
         $scope.videos = vimeo.videos;
     };
     $scope.removeVideo = function (video) {
-        ga('send', 'event', 'video', 'remove', video.video.id);
+        //ga('send', 'event', 'video', 'remove', video.video.id);
         vimeo.removeVideo(video.video.id);
         console.log(tabs.selected);
         if (tabs.selected == 1) {
@@ -80,7 +80,7 @@ webApp.controller('MainController', function ($scope, $interval, $sce) {
         }
     };
     $scope.playVideo = function (video) {
-        ga('send', 'event', 'video', 'play', video.video.id);
+        //ga('send', 'event', 'video', 'play', video.video.id);
         app.playVideo(video.video.id);
     };
 
