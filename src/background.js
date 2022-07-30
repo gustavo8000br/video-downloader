@@ -1,3 +1,4 @@
-console.log("start");
+/**
+ * Background script
+ */
 app.init();
-console.log("end");
